@@ -4,9 +4,9 @@ Public resource for a curated dataset for a supervised time-series machine learn
 
 ## Contents
 
-We expect data to come from 4 distinct sources. Each data source has its own .csv file containing the data itself (one row per patient/hour). Each data source also has its own .json file providing metadata of what the columns in the .csv file mean.
+We expect data to come from 4 distinct sources. Each data source should have its own .csv file containing the data itself (one row per patient/hour). Each data source also has its own .json file providing metadata of what the columns in the .csv file mean.
 
-Currently, we provide json metadata only for these sources (we can't share mimic data on the public web).
+Currently, in this repo we provide json metadata only for these sources (we can't share mimic data on the public web).
 
 * Static patient data (demographics, weight-at-admission, etc)
     * [static_patient_data_spec.json](static_patient_data_spec.json)
