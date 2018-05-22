@@ -1,0 +1,96 @@
+{
+  "name": "bedside_sensor_hourly_data",
+  "title": "Hourly measurements of vital signs for subjects in ICU",
+  "description": "Includes only measurements captured by bedside sensors",
+  "license": "The use of data is conditional on citing the original MIMIC data source.",
+  "resources": [
+    {
+      "name": "bedside_sensor_hourly_data_table",
+      "path": "bedside_sensor_hourly_data.csv",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "profile": "tabular-data-resource",
+      "$schema": "https://frictionlessdata.io/schemas/table-schema.json",
+      "schema": {
+        "fields": [
+          {
+            "name": "subject_id",
+            "description": "ID number for subject within PATIENTS table",
+            "type": "integer",
+            "constraints" : {
+                "required" : true
+            }
+          },
+          {
+            "name": "hadm_id",
+            "description": "ID number for subject within ADMISSIONS table",
+            "type": "integer",
+            "constraints" : {
+                "required" : true
+            }            
+          },
+          {
+            "name": "icustay_id",
+            "description": "ID number for subject within ICUSTAYS table",
+            "type": "integer",
+            "constraints" : {
+                "required" : true
+            }
+          },
+          {
+            "name": "hours_in",
+            "description": "Number of hours subject in ICU before measurement taken. Hour 0 might include measurements up to 6 hours before admission.",
+            "type": "integer",
+            "constraints" : {
+                "required" : true
+            }
+          },
+          {
+            "name": "heart_rate",
+            "description": "TODO",
+            "type": "number"
+          },
+          {
+            "name": "mean_blood_pressure",
+            "description": "TODO",
+            "type": "number"
+          },
+          {
+            "name": "systolic_blood_pressure",
+            "description": "TODO",
+            "type": "number"
+          },
+          {
+            "name": "diastolic_blood_pressure",
+            "description": "TODO",
+            "type": "number"
+          },
+          {
+            "name": "temperature",
+            "description": "TODO",
+            "type": "number"
+          },
+          {
+            "name": "fraction_inspired_oxygen",
+            "description": "TODO",
+            "type": "number"
+          },
+          {
+            "name": "respiratory_rate",
+            "description": "TODO",
+            "type": "number"
+          },
+          {
+            "name": "oxygen_saturation",
+            "description": "TODO",
+            "type": "number",
+            "reference": "https://en.wikipedia.org/wiki/Pulse_oximetry"
+          },
+        ],
+      "missingValues": "nan",
+      "primaryKey": ["subject_id", "hadm_id", "icustay_id", "hours_in"]
+      }
+    }
+  ]
+}
+

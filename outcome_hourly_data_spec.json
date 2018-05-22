@@ -1,0 +1,70 @@
+{
+  "name": "outcome_hourly_data",
+  "title": "Outcome measurements (hourly) for ICU patients extracted from MIMIC-III",
+  "description": "Includes ventilator and vasopressor (blood thinner)",
+  "license": "The use of data is conditional on citing the original MIMIC data source.",
+  "resources": [
+    {
+      "name": "outcome_hourly_data_table",
+      "path": "outcome_hourly_data.csv",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "profile": "tabular-data-resource",
+      "$schema": "https://frictionlessdata.io/schemas/table-schema.json",
+      "schema": {
+        "fields": [
+          {
+            "name": "subject_id",
+            "description": "ID number for subject within PATIENTS table",
+            "type": "integer",
+            "constraints" : {
+                "required" : true
+            }
+          },
+          {
+            "name": "hadm_id",
+            "description": "ID number for subject within ADMISSIONS table",
+            "type": "integer",
+            "constraints" : {
+                "required" : true
+            }            
+          },
+          {
+            "name": "icustay_id",
+            "description": "ID number for subject within ICUSTAYS table",
+            "type": "integer",
+            "constraints" : {
+                "required" : true
+            }
+          },
+          {
+            "name": "hours_in",
+            "description": "Number of hours subject in ICU before measurement taken.",
+            "type": "integer",
+            "constraints" : {
+                "required" : true
+            }
+          },
+          {
+            "name": "vent",
+            "description": "Mechanical ventilator used at current timestep (1 = present, 0 = not).",
+            "type": "integer",
+            "constraints" : {
+                "required" : false
+            }
+          },
+          {
+            "name": "vaso",
+            "description": "Vasopressors given via IV at current timestep (1 = yes, 0 = no).",
+            "type": "integer",
+            "constraints" : {
+                "required" : false
+            }
+          }
+        ],
+      "missingValues": "nan",
+      "primaryKey": ["subject_id", "hadm_id", "icustay_id", "hours_in"]
+      }
+    }
+  ]
+}
