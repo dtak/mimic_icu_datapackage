@@ -8,6 +8,8 @@ We expect data to come from 4 distinct sources. Each data source should have its
 
 Currently, in this repo we provide json metadata only for these sources (we can't share mimic data on the public web).
 
+Any variable fields mentioned within these json files represent almost exactly what we actually used for the AMIA CRI paper, using the full column name from the MIMIC-III-v1.4 database (released in 2016, https://mimic.physionet.org/).
+
 * Static patient data (demographics, weight-at-admission, etc)
     * [static_patient_data_spec.json](static_patient_data_spec.json)
     * static_patient_data.csv
